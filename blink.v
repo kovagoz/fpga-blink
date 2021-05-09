@@ -39,9 +39,9 @@ module main (
 );
 
 // Set the desired frequencies and assign the clock signals to LEDs.
-clock_down #(`ONE_HZ) led1 (i_Clk, o_LED_1);
-clock_down #(`TWO_HZ) led2 (i_Clk, o_LED_2);
-clock_down #(`FOUR_HZ) led3 (i_Clk, o_LED_3);
-clock_down #(`FIVE_HZ) led4 (i_Clk, o_LED_4);
+clock_down #(`ONE_HZ) led1 (.clock_i(i_Clk), .clock_o(o_LED_1));
+clock_down #(`TWO_HZ) led2 (.clock_i(i_Clk), .clock_o(o_LED_2));
+clock_down #(`FOUR_HZ) led3 (.clock_i(i_Clk), .clock_o(o_LED_3));
+clock_down #(`FIVE_HZ) led4 (.clock_i(i_Clk), .clock_o(o_LED_4));
 
 endmodule
