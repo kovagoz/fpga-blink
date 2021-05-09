@@ -9,7 +9,7 @@ blink.asc: blink.json constraints.pcf
 	$(docker_cmd) nextpnr-ice40 --hx1k --package vq100 --json blink.json --pcf constraints.pcf --asc $@
 
 blink.json: blink.v
-	$(docker_cmd) yosys -p 'synth_ice40 -top main -json $@' blink.v
+	$(docker_cmd) yosys -p 'synth_ice40 -top blink -json $@' blink.v
 
 constraints.pcf:
 	curl https://www.nandland.com/goboard/Go_Board_Constraints.pcf > $@

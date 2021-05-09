@@ -30,7 +30,7 @@ module clock_down #(
 endmodule
 
 // Like the main function in C
-module main (
+module blink (
   input  i_Clk,
   output o_LED_1,
   output o_LED_2,
