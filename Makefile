@@ -2,6 +2,9 @@ docker_img := kovagoz/icestorm
 docker_run := docker run --rm -it -v $(PWD):/host -w /host
 docker_cmd := $(docker_run) $(docker_img)
 
+.PHONY: build
+build: blink.bin
+
 blink.bin: blink.asc
 	$(docker_cmd) icepack blink.asc blink.bin
 
