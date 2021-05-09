@@ -1,4 +1,7 @@
 blink.json
 blink.asc
 blink.bin
+blink_tb.vcd
+blink_tb.vvp
 constraints.pcf
+.hdl_checker/

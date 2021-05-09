@@ -23,7 +23,16 @@ install:
 
 .PHONY: clean
 clean:
-	rm -f blink.json blink.asc blink.bin
+	rm -f blink.json blink.asc blink.bin blink_tb.vcd blink_tb.vvp
+
+.PHONY: test
+test: blink_tb.vcd
+
+blink_tb.vcd: blink_tb.vvp
+	$(docker_run) --entrypoint vvp kovagoz/iverilog:0.5.0 $<
+
+blink_tb.vvp: blink_tb.v
+	$(docker_run) kovagoz/iverilog:0.5.0 -o $@ $<
 
 .PHONY: shell
 shell:
